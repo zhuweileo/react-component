@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react-demo</title>
+</head>
+<body>
+<div id="like_button_container"></div>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="../dist/index.js"></script>
+<script type="text/babel">
+  'use strict';
+  console.log(zwReactCom);
+  const {LikeButton} = zwReactCom;
+  const domContainer = document.querySelector('#like_button_container');
+  ReactDOM.render(<LikeButton/>, domContainer);
+</script>
+
+</body>
+</html>
