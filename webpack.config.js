@@ -11,6 +11,9 @@ module.exports = {
     libraryTarget: 'umd',
   },
   mode: 'production',
+  externals:{
+    react: 'react'
+  },
   module: {
     rules: [
       {
