@@ -1,7 +1,6 @@
 var path = require('path')
 var htmlPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
-console.log(path.resolve(__dirname,'../../'))
 module.exports = {
   entry: {
     index: './demo/webpack/src/index.js',
