@@ -1,6 +1,6 @@
 import React from "react";
 
-export class LikeButton extends React.Component {
+export default class LikeButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = { liked: false };

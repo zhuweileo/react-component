@@ -1,1 +1,1 @@
-export {LikeButton} from './components/button/button'
+export {default as LikeButton} from './components/button/button'
