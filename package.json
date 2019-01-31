@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist&&cross-env NODE_ENV=production npx webpack --config webpack.config.js"
+    "build": "rm -rf dist&&cross-env NODE_ENV=production npx webpack --config webpack.config.js",
+    "demo:dev": "webpack-dev-server --mode=development --config webpack.demo.config.js",
+    "demo:build": "rm -rf dist&&cross-env NODE_ENV=production npx webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +25,12 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "prop-types": "^15.6.2",

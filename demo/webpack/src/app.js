@@ -1,7 +1,13 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import Nav from '../../../src/components/nav/Nav?com'
 
-ReactDom.render(
-  <div>你好</div>,
-  document.getElementById('app')
-)
+export default class App extends React.Component{
+  constructor(){
+    super();
+  }
+  render (){
+    return (
+      <Nav></Nav>
+    )
+  }
+}

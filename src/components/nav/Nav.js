@@ -4,13 +4,10 @@ import PropTypes from 'prop-types'
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = {liked: false};
   }
-
   render() {
-    return (
-      <div className='zw-nav'>Nav</div>
-    );
+    return <div>nav</div>
   }
 }
 

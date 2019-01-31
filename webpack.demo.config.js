@@ -1,12 +1,13 @@
 var path = require('path')
 var htmlPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
+console.log(path.resolve(__dirname,'../../'))
 module.exports = {
   entry: {
-    index: './src/app.js',
+    index: './demo/webpack/src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './demo/webpack/dist'),
     filename: '[name].js',
   },
   module: {
@@ -36,7 +37,7 @@ module.exports = {
   plugins: [
     new htmlPlugin({
       filename: "index.html",
-      template: "./index.html",
+      template: "./demo/webpack/index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
   ]
