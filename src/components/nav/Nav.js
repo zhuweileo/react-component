@@ -5,18 +5,36 @@ import {isPlainObject} from "../../shared/util";
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {liked: false};
+    this.updateSelectedNames = this.updateSelectedNames.bind(this)
+
+    this.state = {
+      selectedNames: []
+    };
   }
+
+  componentDidMount() {
+    const {children} = this.props;
+    children.forEach((c) => {
+      if(c.type && c.type.displayName === 'NavItem'){
+      }
+    })
+  }
+
+  updateSelectedNames(){
+    console.log(this.state.selectedNames)
+  }
+
   render() {
     console.log(this.props.children);
     const {children} = this.props;
     const hasChildren = !!children
     const oneChild = isPlainObject(children)
     const multiChild = Array.isArray(children);
-    // console.log(oneChild,multiChild)
+    console.log(children);
+    // console.log(children[0].type.displayName)
+    console.log(this.state.selectedNames);
 
-
-    return <div>{children}</div>
+    return <div className='zw-nav'>{children}</div>
   }
 }
 

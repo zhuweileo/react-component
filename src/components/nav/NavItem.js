@@ -4,18 +4,26 @@ import PropTypes from 'prop-types'
 export default class NavItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {liked: false};
+    this.updateSelected = this.updateSelected.bind(this);
+    this.state = {
+      isSelected: false,
+    };
+  }
+  updateSelected(){
+    console.log(this.props.name)
+    this.setState({
+      isSelected: !this.state.isSelected
+    })
+    this.props.updateSelectedNames()
   }
   render() {
     const {children} = this.props
-    return <div>{ children }</div>
+    return <div className='zw-nav-item' onClick={this.updateSelected}>{ children }{this.state.isSelected + ''}</div>
   }
 }
 
 NavItem.propTypes = {
-  selectedKeys: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  updateSelectedNames: PropTypes.func
 }
 
-NavItem.defaultProps = {
-  selectedKeys: [],
-}

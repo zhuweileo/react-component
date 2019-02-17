@@ -8,7 +8,7 @@ export default class SubNav extends React.Component {
   }
   render() {
     const {children} = this.props
-    return <div>{children}</div>
+    return <div className='zw-sub-nav'>{children}</div>
   }
 }
 
