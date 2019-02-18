@@ -5,33 +5,60 @@ import './Nav.scss'
 
 export const NavContext = React.createContext({
   selectedNames: [],
-  updateSelectedNames: () =>{},
+  updateSelectedNames: () => {
+  },
+  selectedSubNavs: [],
+  updateSelectedSubNavs: () => {
+  }
 })
 
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.updateSelectedNames = this.updateSelectedNames.bind(this)
+    this.updateSelectedSubNavs = this.updateSelectedSubNavs.bind(this)
 
     this.state = {
       selectedNames: [],
-      updateSelectedNames: this.updateSelectedNames
+      updateSelectedNames: this.updateSelectedNames,
+      selectedSubNavs: [],
+      updateSelectedSubNavs: this.updateSelectedSubNavs,
     };
   }
 
   componentDidMount() {
-    const {children} = this.props;
+    const {children, selectedNames} = this.props;
+    this.setState({
+      selectedNames: selectedNames,
+    })
   }
 
-  updateSelectedNames(name){
-    if(this.state.selectedNames.includes(name)){
+  updateSelectedNames(name) {
+    if (this.state.selectedNames.includes(name)) {
       return
     } else {
       this.setState({
         selectedNames: [name]
       })
     }
-    console.log(this.state.selectedNames)
+    // console.log(this.state.selectedNames)
+    this.props.onChange && this.props.onChange([name])
+  }
+
+  updateSelectedSubNavs(name) {
+    console.log(name);
+    if(name === null){
+      this.setState({
+        selectedSubNavs: []
+      })
+    } else {
+      this.setState((state)=> {
+        state.selectedSubNavs.push(name)
+        return {
+          selectedSubNavs: state.selectedSubNavs
+        }
+      })
+    }
   }
 
   render() {
@@ -39,22 +66,19 @@ export default class Nav extends React.Component {
     const hasChildren = !!children
     const oneChild = isPlainObject(children)
     const multiChild = Array.isArray(children);
-    // console.log(children);
-    // console.log(children[0].type.displayName)
-    // console.log(this.state.selectedNames);
 
     return (
-        <NavContext.Provider value={this.state}>
-          <div className='zw-nav'>{children}</div>
-        </NavContext.Provider>
+      <div className='zw-nav'>
+        <NavContext.Provider value={this.state}>{children}</NavContext.Provider>
+      </div>
     )
   }
 }
 
 Nav.propTypes = {
-  selectedKeys: PropTypes.array.isRequired,
+  selectedNames: PropTypes.array.isRequired,
 }
 
 Nav.defaultProps = {
-  selectedKeys: [],
+  selectedNames: [],
 }

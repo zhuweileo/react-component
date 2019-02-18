@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types'
 import {NavContext} from "./Nav";
+import {SubNavContext} from "./SubNav";
 
 export default class NavItem extends React.Component {
   constructor(props) {
@@ -8,15 +9,33 @@ export default class NavItem extends React.Component {
     this.updateSelected = this.updateSelected.bind(this);
   }
   updateSelected(){
-    const {selectedNames,updateSelectedNames} = this.context
+    const {updateSelectedNames,updateSelectedSubNavs} = this.context
     updateSelectedNames(this.props.name)
+    updateSelectedSubNavs(null)
   }
   render() {
     const {children,name} = this.props
     const {selectedNames} = this.context
     const className = selectedNames.includes(name)? 'zw-nav-item active' : 'zw-nav-item';
 
-    return <div className={className} onClick={this.updateSelected}>{ children }</div>
+    return <div className={className} onClick={this.updateSelected} >{ children }</div>
+    // return (
+    //   <NavContext.Consumer>
+    //     {
+    //       NavContext => (
+    //         <SubNavContext.Consumer>
+    //           {
+    //             SubNavContext => (
+    //               <div className={className}
+    //                    onClick={(e) => this.updateSelected(e,NavContext,SubNavContext)}
+    //               >{ children }</div>
+    //             )
+    //           }
+    //         </SubNavContext.Consumer>
+    //       )
+    //     }
+    //   </NavContext.Consumer>
+    //   )
   }
 }
 
