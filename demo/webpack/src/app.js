@@ -23,7 +23,7 @@ class App extends React.Component {
           <NavItem name='2'>2</NavItem>
           <NavItem name='3'>3</NavItem>
         </SubNav>
-        <SubNav name={'g2'} title={'分组2'}>
+        <SubNav name={'g2'} disabled={true} title={'分组2'}>
           <NavItem name='4'>4</NavItem>
           <NavItem name='5'>5</NavItem>
           <NavItem name='6'>6</NavItem>

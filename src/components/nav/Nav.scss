@@ -27,6 +27,19 @@
     }
   }
 
+  &.disabled{
+    & > .zw-sub-nav-title {
+      color: #ccc;
+      cursor: not-allowed;
+      border-bottom: 2px solid transparent;
+    }
+    &.disabled:hover{
+      & > .zw-sub-nav-content {
+        display: none;
+      }
+    }
+  }
+
   .zw-sub-nav-title {
     cursor: pointer;
     padding: 0 20px;

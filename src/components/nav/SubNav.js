@@ -26,7 +26,7 @@ export default class SubNav extends React.Component {
   }
 
   render() {
-    const {children, title } = this.props
+    const {children, title, disabled } = this.props
     const {selectedNames, selectedSubNavs} = this.context
     // console.log(selectedSubNavs,1111)
     let isActive = false;
@@ -38,11 +38,13 @@ export default class SubNav extends React.Component {
         isActive = true;
       }
     })
-    const className = isActive ? 'zw-sub-nav active' : 'zw-sub-nav';
-
+    // const className = isActive ? 'zw-sub-nav active' : 'zw-sub-nav';
+    const className = ['zw-sub-nav']
+    if(disabled) className.push('disabled')
+    else if(isActive) className.push('active')
 
     return (
-      <div className={className} onClick={this.onClick}>
+      <div className={className.join(' ')} onClick={this.onClick}>
         <div className="zw-sub-nav-title">
           {title}
         </div>
@@ -60,6 +62,11 @@ export default class SubNav extends React.Component {
 SubNav.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+}
+
+SubNav.defaultProps = {
+  disabled: false,
 }
 
 SubNav.contextType = NavContext;
