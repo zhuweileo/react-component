@@ -18,7 +18,8 @@ export default class SubNav extends React.Component {
     const {updateSelectedSubNavs} = this.context
     e.persist()
     // console.log(e);
-    if(e.target.classList.contains('zw-nav-item')){
+    const  classList = e.target.classList
+    if(classList.contains('zw-nav-item') && !classList.contains('disabled')){
       // console.log('yes');
       updateSelectedSubNavs(this.props.name);
     }

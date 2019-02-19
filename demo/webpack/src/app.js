@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <Nav selectedNames={['8']} onChange={this.navChange}>
         <SubNav name={'g1'} title={'分组1'}>
-          <NavItem name='1'>1</NavItem>
+          <NavItem name='1' disabled={true}>1</NavItem>
           <NavItem name='2'>2</NavItem>
           <NavItem name='3'>3</NavItem>
         </SubNav>
@@ -28,7 +28,7 @@ class App extends React.Component {
           <NavItem name='5'>5</NavItem>
           <NavItem name='6'>6</NavItem>
           <SubNav name={'g3'} title={'分组3'}>
-            <NavItem name='aa'>aa</NavItem>
+            <NavItem name='aa' disabled={true}>aa</NavItem>
             <SubNav name={'g4'} title={'分组4'}>
               <NavItem name='dd'>dd</NavItem>
               <NavItem name='ee'>ee</NavItem>

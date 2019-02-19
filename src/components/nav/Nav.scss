@@ -76,6 +76,12 @@
     color: #1890ff;
     border-bottom: 2px solid #1890ff;
   }
+
+  &.disabled{
+    color: #ccc;
+    border-bottom: 2px solid transparent;
+    cursor: not-allowed;
+  }
 }
 .zw-sub-nav{
   .zw-nav-item:first-child{

@@ -9,21 +9,34 @@ export default class NavItem extends React.Component {
     this.updateSelected = this.updateSelected.bind(this);
   }
   updateSelected(){
+    const {disabled} = this.props
+    if(disabled) return
     const {updateSelectedNames,updateSelectedSubNavs} = this.context
     updateSelectedNames(this.props.name)
     updateSelectedSubNavs(null)
   }
   render() {
-    const {children,name} = this.props
+    const {children,name,disabled} = this.props
     const {selectedNames} = this.context
-    const className = selectedNames.includes(name)? 'zw-nav-item active' : 'zw-nav-item';
+    // const className = selectedNames.includes(name)? 'zw-nav-item active' : 'zw-nav-item';
+    const className = ['zw-nav-item']
+    if(disabled){
+      className.push('disabled')
+    } else if(selectedNames.includes(name)){
+      className.push('active')
+    }
 
-    return <div className={className} onClick={this.updateSelected} >{ children }</div>
+    return <div className={className.join(' ')} onClick={this.updateSelected} >{ children }</div>
   }
 }
 
 NavItem.propTypes = {
   name: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+}
+
+NavItem.defaultProps = {
+  disabled: false,
 }
 
 NavItem.contextType = NavContext
