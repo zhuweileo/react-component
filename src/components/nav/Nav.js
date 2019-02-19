@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import {isPlainObject} from "../../shared/util";
 import './Nav.scss'
 
 export const NavContext = React.createContext({
@@ -63,9 +62,6 @@ export default class Nav extends React.Component {
 
   render() {
     const {children} = this.props;
-    const hasChildren = !!children
-    const oneChild = isPlainObject(children)
-    const multiChild = Array.isArray(children);
 
     return (
       <div className='zw-nav'>

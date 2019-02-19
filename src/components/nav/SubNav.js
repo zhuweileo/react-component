@@ -13,26 +13,6 @@ export default class SubNav extends React.Component {
     }
   }
 
-  // updateActive(children) {
-  //   const {selectedNames, selectedSubNavs, updateSelectedSubNavs} = this.context
-  //   console.log(selectedSubNavs,11111);
-  //   children.forEach((c) => {
-  //     if (c.props.name && selectedNames.includes(c.props.name)) {
-  //       this.setState({
-  //         isActive: true
-  //       })
-  //     }
-  //     if (c.props.name && selectedSubNavs.includes(c.props.name)) {
-  //       this.setState({
-  //         isActive: true
-  //       })
-  //     }
-  //     if (c.props.children) {
-  //       this.updateActive(c.props.children)
-  //     }
-  //   })
-  // }
-
   onClick(e){
     // console.log(e.nativeEvent)
     const {updateSelectedSubNavs} = this.context

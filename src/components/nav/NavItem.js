@@ -19,23 +19,6 @@ export default class NavItem extends React.Component {
     const className = selectedNames.includes(name)? 'zw-nav-item active' : 'zw-nav-item';
 
     return <div className={className} onClick={this.updateSelected} >{ children }</div>
-    // return (
-    //   <NavContext.Consumer>
-    //     {
-    //       NavContext => (
-    //         <SubNavContext.Consumer>
-    //           {
-    //             SubNavContext => (
-    //               <div className={className}
-    //                    onClick={(e) => this.updateSelected(e,NavContext,SubNavContext)}
-    //               >{ children }</div>
-    //             )
-    //           }
-    //         </SubNavContext.Consumer>
-    //       )
-    //     }
-    //   </NavContext.Consumer>
-    //   )
   }
 }
 
