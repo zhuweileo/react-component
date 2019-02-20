@@ -45,7 +45,6 @@ export default class Nav extends React.Component {
   }
 
   updateSelectedSubNavs(name) {
-    console.log(name);
     if(name === null){
       this.setState({
         selectedSubNavs: []
