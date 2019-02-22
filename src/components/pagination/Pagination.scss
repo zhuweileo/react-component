@@ -1,0 +1,18 @@
+.zw-pagination{
+
+}
+.zw-pagination-item{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 5px;
+  display: inline-flex;
+  min-width: 20px;
+  height: 20px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  &.active{
+    border: 1px solid #1890ff;
+    cursor: default;
+  }
+}

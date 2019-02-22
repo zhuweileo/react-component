@@ -3,6 +3,7 @@ import {hot} from 'react-hot-loader'
 
 import NavDemo from './nav/NavDemo'
 import RippleDemo from './ripple/RippleDemo'
+import PaginationDemo from './pagination/PaginationDemo'
 
 class App extends React.Component {
   constructor() {
@@ -12,14 +13,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavDemo key={'a'}/>
-        <RippleDemo key={'b'}/>
-        <div style={{
-          position: 'relative',
-          background: '#f0f'
-        }}>
-          <div></div>
-        </div>
+        <NavDemo/>
+        <RippleDemo/>
+        <PaginationDemo/>
       </div>
 
     )
