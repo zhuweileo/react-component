@@ -4,6 +4,7 @@ import {hot} from 'react-hot-loader'
 import NavDemo from './nav/NavDemo'
 import RippleDemo from './ripple/RippleDemo'
 import PaginationDemo from './pagination/PaginationDemo'
+import TableDemo from './table/TableDemo'
 
 class App extends React.Component {
   constructor() {
@@ -16,6 +17,7 @@ class App extends React.Component {
         <NavDemo/>
         <RippleDemo/>
         <PaginationDemo/>
+        <TableDemo/>
       </div>
 
     )
