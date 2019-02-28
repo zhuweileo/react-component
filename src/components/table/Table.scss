@@ -1,0 +1,27 @@
+.zw-table{
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th{
+    text-align: left;
+  }
+
+  tr{
+    border-bottom: 1px solid #ccc;
+  }
+  tbody{
+    tr:nth-child(odd){
+      background: rgba(173, 216, 230, 0.31);
+    }
+    tr:hover{
+      background: rgba(108, 188, 230, 0.61);
+    }
+  }
+  th,td{
+    height: 50px;
+  }
+  [type=checkbox] {
+    cursor: pointer;
+  }
+}

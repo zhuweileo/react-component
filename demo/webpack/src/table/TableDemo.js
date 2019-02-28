@@ -27,10 +27,26 @@ const dataSource = [
 ];
 
 class TableDemo extends Component {
+  constructor(props) {
+    super(props);
+    this.onSelectedChange = this.onSelectedChange.bind(this);
+    this.state = {
+      selectedItems: ['1','4']
+    }
+
+  }
+
+  onSelectedChange(e){
+    console.log(e,1111)
+    this.setState({
+      selectedItems: e
+    })
+  }
+
   render() {
     return (
       <div>
-        <Table columns={columns} dataSource={dataSource}/>
+        <Table columns={columns} dataSource={dataSource} selectedItems={this.state.selectedItems} onSelectedChange={this.onSelectedChange}/>
       </div>
     );
   }
